@@ -2,6 +2,8 @@ package io.github.muntashirakon.setedit;
 
 import android.os.Build;
 
+import androidx.annotation.Keep;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -43,8 +45,10 @@ public class Native implements PropertyCallback, Comparator<String[]> {
         }
     }
 
+    @Keep
     public static native void readAndroidPropertiesPost26(PropertyCallback propertyCallback);
 
+    @Keep
     public static native boolean readAndroidPropertyPre26(int n, String[] property);
 
     @Override
