@@ -5,7 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.os.Bundle;
 
-import io.github.muntashirakon.setedit.Utils.EditorUtils;
+import io.github.muntashirakon.setedit.utils.EditorUtils;
 import io.github.muntashirakon.setedit.adapters.SettingsRecyclerAdapter;
 
 public class SetActivity extends Activity {

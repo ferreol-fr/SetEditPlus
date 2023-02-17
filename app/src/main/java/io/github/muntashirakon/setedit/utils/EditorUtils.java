@@ -1,4 +1,4 @@
-package io.github.muntashirakon.setedit.Utils;
+package io.github.muntashirakon.setedit.utils;
 
 
 import android.Manifest;

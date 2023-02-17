@@ -36,8 +36,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import io.github.muntashirakon.setedit.Utils.EditorUtils;
-import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutHelper;
+import io.github.muntashirakon.setedit.utils.EditorUtils;
+import io.github.muntashirakon.setedit.utils.Shortcut.ShortcutHelper;
 import io.github.muntashirakon.setedit.adapters.AbsRecyclerAdapter;
 import io.github.muntashirakon.setedit.adapters.AdapterProvider;
 import io.github.muntashirakon.setedit.adapters.SettingsRecyclerAdapter;

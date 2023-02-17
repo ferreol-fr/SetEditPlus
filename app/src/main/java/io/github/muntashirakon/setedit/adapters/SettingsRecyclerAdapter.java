@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Locale;
 
 import io.github.muntashirakon.setedit.R;
-import io.github.muntashirakon.setedit.Utils.EditorUtils;
+import io.github.muntashirakon.setedit.utils.EditorUtils;
 import io.github.muntashirakon.setedit.cursor.SettingsCursor;
 
 public class SettingsRecyclerAdapter extends AbsRecyclerAdapter {

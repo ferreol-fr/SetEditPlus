@@ -28,8 +28,8 @@ import java.util.List;
 
 import io.github.muntashirakon.setedit.R;
 import io.github.muntashirakon.setedit.EditorActivity;
-import io.github.muntashirakon.setedit.Utils.EditorUtils;
-import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutHelper;
+import io.github.muntashirakon.setedit.utils.EditorUtils;
+import io.github.muntashirakon.setedit.utils.Shortcut.ShortcutHelper;
 
 public abstract class AbsRecyclerAdapter extends RecyclerView.Adapter<AbsRecyclerAdapter.ViewHolder> {
 

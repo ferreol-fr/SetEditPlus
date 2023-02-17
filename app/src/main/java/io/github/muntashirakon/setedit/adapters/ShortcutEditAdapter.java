@@ -24,9 +24,9 @@ import java.util.Locale;
 import java.util.Objects;
 
 import io.github.muntashirakon.setedit.R;
-import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutEditItemModel;
-import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutEditRecyclerRowMoveCallback;
-import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutEditRecyclerViewAdapter;
+import io.github.muntashirakon.setedit.utils.Shortcut.ShortcutEditItemModel;
+import io.github.muntashirakon.setedit.utils.Shortcut.ShortcutEditRecyclerRowMoveCallback;
+import io.github.muntashirakon.setedit.utils.Shortcut.ShortcutEditRecyclerViewAdapter;
 
 public class ShortcutEditAdapter extends AbsRecyclerAdapter {
 

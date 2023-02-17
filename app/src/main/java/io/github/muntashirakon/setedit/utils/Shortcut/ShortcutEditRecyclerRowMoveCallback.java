@@ -1,4 +1,4 @@
-package io.github.muntashirakon.setedit.Utils.Shortcut;
+package io.github.muntashirakon.setedit.utils.Shortcut;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
