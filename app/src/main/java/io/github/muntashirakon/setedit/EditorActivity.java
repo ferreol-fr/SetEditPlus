@@ -37,7 +37,7 @@ import java.util.List;
 import java.util.Locale;
 
 import io.github.muntashirakon.setedit.Utils.EditorUtils;
-import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutIcons;
+import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutHelper;
 import io.github.muntashirakon.setedit.adapters.AbsRecyclerAdapter;
 import io.github.muntashirakon.setedit.adapters.AdapterProvider;
 import io.github.muntashirakon.setedit.adapters.SettingsRecyclerAdapter;
@@ -89,9 +89,9 @@ public class EditorActivity extends AppCompatActivity implements AdapterView.OnI
     public void addNewItemDialog() {
         View editorDialogView = getLayoutInflater().inflate(R.layout.dialog_new, listView, false);
         setCurrentEditorDialogView(editorDialogView);
-        editorDialogView.findViewById(R.id.switchLayoutShortcut).setOnClickListener(v2 -> ShortcutIcons.onSwitchLayoutShortcut(this));
-        editorDialogView.findViewById(R.id.button_icon).setOnClickListener(v2 -> ShortcutIcons.openIconPiker(this));
-        editorDialogView.findViewById(R.id.switchAppendShortcut).setOnClickListener(v2 -> ShortcutIcons.onSwitchAppendShortcut(this));
+        editorDialogView.findViewById(R.id.switchLayoutShortcut).setOnClickListener(v2 -> ShortcutHelper.onSwitchLayoutShortcut(this));
+        editorDialogView.findViewById(R.id.button_icon).setOnClickListener(v2 -> ShortcutHelper.openIconPiker(this));
+        editorDialogView.findViewById(R.id.switchAppendShortcut).setOnClickListener(v2 -> ShortcutHelper.onSwitchAppendShortcut(this));
         EditText keyNameView = editorDialogView.findViewById(R.id.txtName);
         keyNameView.requestFocus();
         new MaterialAlertDialogBuilder(this)
@@ -245,7 +245,7 @@ public class EditorActivity extends AppCompatActivity implements AdapterView.OnI
                     Intent data = result.getData();
                     if (data != null) {
                         Uri uri = data.getData();
-                        ShortcutIcons.setIconPiker(uri, this);
+                        ShortcutHelper.setIconPiker(uri, this);
                     }
                 }
             });

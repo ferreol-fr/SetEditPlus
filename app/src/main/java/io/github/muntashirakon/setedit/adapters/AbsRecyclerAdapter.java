@@ -26,10 +26,10 @@ import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
 
-import io.github.muntashirakon.setedit.EditorActivity;
 import io.github.muntashirakon.setedit.R;
+import io.github.muntashirakon.setedit.EditorActivity;
 import io.github.muntashirakon.setedit.Utils.EditorUtils;
-import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutIcons;
+import io.github.muntashirakon.setedit.Utils.Shortcut.ShortcutHelper;
 
 public abstract class AbsRecyclerAdapter extends RecyclerView.Adapter<AbsRecyclerAdapter.ViewHolder> {
 
@@ -90,10 +90,10 @@ public abstract class AbsRecyclerAdapter extends RecyclerView.Adapter<AbsRecycle
             ((EditorActivity) context).setCurrentEditorDialogView(editDialogView);
             editDialogView.findViewById(R.id.button_help).setOnClickListener(v2 -> openHelp(keyName));
             SwitchCompat switchLayoutShortcut = editDialogView.findViewById(R.id.switchLayoutShortcut);
-            switchLayoutShortcut.setOnClickListener(v2 -> ShortcutIcons.onSwitchLayoutShortcut(context));
+            switchLayoutShortcut.setOnClickListener(v2 -> ShortcutHelper.onSwitchLayoutShortcut(context));
             SwitchCompat switchLayoutAppendShortcut = editDialogView.findViewById(R.id.switchAppendShortcut);
-            switchLayoutAppendShortcut.setOnClickListener(v2 -> ShortcutIcons.onSwitchAppendShortcut(context));
-            editDialogView.findViewById(R.id.button_icon).setOnClickListener(v2 -> ShortcutIcons.openIconPiker(context));
+            switchLayoutAppendShortcut.setOnClickListener(v2 -> ShortcutHelper.onSwitchAppendShortcut(context));
+            editDialogView.findViewById(R.id.button_icon).setOnClickListener(v2 -> ShortcutHelper.openIconPiker(context));
             ((TextView) editDialogView.findViewById(R.id.txtName)).setText(keyName);
 
             MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(context)
@@ -154,7 +154,7 @@ public abstract class AbsRecyclerAdapter extends RecyclerView.Adapter<AbsRecycle
                     int radioButtonId = existingShortcutRadioGroup.getCheckedRadioButtonId();
                     RadioButton radioButton = editDialogView.findViewById(radioButtonId);
                     String idShortcut = (String) radioButton.getTag();
-                    ShortcutIcons.updateDesktopShortcutEdit(context, settingsAdapter, keyName, NewKeyValue, idShortcut, false);
+                    ShortcutHelper.updateDesktopShortcutEdit(context, settingsAdapter, keyName, NewKeyValue, idShortcut, false);
                 } else {
                     TextView keyShortcutLabel = editDialogView.findViewById(R.id.txtEditShortcut);
                     if (keyShortcutLabel.getText().toString().isEmpty()) return;
@@ -164,7 +164,7 @@ public abstract class AbsRecyclerAdapter extends RecyclerView.Adapter<AbsRecycle
                         if (editDialogView.findViewById(R.id.button_icon).getTag() instanceof Uri) {
                             shortcutIconUri = (Uri) editDialogView.findViewById(R.id.button_icon).getTag();
                         }
-                        ShortcutIcons.createDesktopShortcut(context, settingsAdapter, keyName, NewKeyValue,
+                        ShortcutHelper.createDesktopShortcut(context, settingsAdapter, keyName, NewKeyValue,
                                 keyShortcut, shortcutIconUri);
                     }
                 }
@@ -189,14 +189,14 @@ public abstract class AbsRecyclerAdapter extends RecyclerView.Adapter<AbsRecycle
                     if (editDialogView.findViewById(R.id.button_icon).getTag() instanceof Uri) {
                         shortcutIconUri = (Uri) editDialogView.findViewById(R.id.button_icon).getTag();
                     }
-                    ShortcutIcons.createDesktopShortcutDelete(context, settingsAdapter, keyName,
+                    ShortcutHelper.createDesktopShortcutDelete(context, settingsAdapter, keyName,
                             keyShortcut.toString(), shortcutIconUri);
                 }
             } else {
                 int radioButtonId = existingShortcutRadioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = editDialogView.findViewById(radioButtonId);
                 String idShortcut = (String) radioButton.getTag();
-                ShortcutIcons.updateDesktopShortcutEdit(context, settingsAdapter, keyName, "",
+                ShortcutHelper.updateDesktopShortcutEdit(context, settingsAdapter, keyName, "",
                         idShortcut, true);
             }
 

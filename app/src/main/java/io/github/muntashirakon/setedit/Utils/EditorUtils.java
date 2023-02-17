@@ -3,7 +3,6 @@ package io.github.muntashirakon.setedit.Utils;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -41,7 +40,7 @@ public class EditorUtils {
     public static Boolean checkSettingsWritePermission(@NonNull Context context, @NonNull String tableType) {
         String permission = "system".equals(tableType) ? Manifest.permission.WRITE_SETTINGS : Manifest.permission.WRITE_SECURE_SETTINGS;
         if ("system".equals(tableType) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !Settings.System.canWrite(context)) {
-            new AlertDialog.Builder(context)
+            new MaterialAlertDialogBuilder(context)
                     .setTitle("Permission needed")
                     .setMessage("You have to enable SetEditPlus for Modify system settings")
                     .setPositiveButton("ok", (dialog, which) -> {

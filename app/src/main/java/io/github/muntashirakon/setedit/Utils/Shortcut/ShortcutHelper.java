@@ -29,7 +29,7 @@ import io.github.muntashirakon.setedit.R;
 import io.github.muntashirakon.setedit.SetActivity;
 import io.github.muntashirakon.setedit.adapters.SettingsRecyclerAdapter;
 
-public class ShortcutIcons {
+public class ShortcutHelper {
 
     private static boolean shortcutPermissionIsAsking = false;
 
